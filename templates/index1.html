@@ -1,0 +1,293 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+    <script src = "{% static 'app.js' %}"></script>
+</head>
+<body>
+    <main class="hero">
+        <header class="header" >
+            <nav class="nav">
+                <a href="shop.html">SHOP</a>
+                <a href="About.html">ABOUT</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+            <div id="logo">
+                <!-- <img src = "{% static 'assets/denim.webp' %}" "assets/logo.png" alt="logo" width="300" height="75" /> -->
+                <!-- <img src = "{% static 'assets/denim.webp' %}" "assets/new_logo_1_-removebg-preview.png" alt="logo" width="150" height="75" /> -->
+                <h3>BLACK MARKET</h3>
+            </div>
+            <div class="header-features">
+                <div class="search">
+                    <img src = "{% static 'assets/free_icon_1.svg' %}"  alt="search bar" width="15" height="15">
+                    <input type="text" class="main-search"></input>
+                </div>
+                <div class="account" onclick="userAuth()">
+                    <img src = "{% static 'assets/account-white.svg' %}"  alt="account" width="15" height="15">
+                </div>
+                <div class="cart">
+                    <img src = "{% static 'assets/cart.svg' %}"  alt="cart" width="17" height="17">
+                </div>
+                <div class="navbar" onclick="showNav()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </header>
+        <section class="hero-content">
+            <div class="hero-container">
+                <h6>THE JACK IN SPRUCE NEP PLAID</h6>
+                <h1>Perfecting A <br> Holiday Outfit</h1>
+                <button type="submit">
+                    <h3>SHOP NOW</h3>
+                </button>
+            </div>
+        </section>
+    </main>
+    <!-- 
+        End of hero section and header 
+     -->
+     <section class="user-signup">
+        <div class="signup-heading">
+            <span id="cross-mark" onclick="loginClose()">&#9587;</span>
+            <h1>Your Account</h1>
+            <span></span>
+        </div>   
+        <div class="signup-options">
+            <h4 id="log-in" onclick="func1()">LOG IN</h4>
+            <h4 id="sign-up" onclick="func2()">REGISTER</h4>
+        </div> 
+            <section class="signup">
+                <form action="" method="get">
+                    <label for="fname">FIRST NAME</label><br>
+                    <input type="text" name="firstname" id="text-input" placeholder="FIRST NAME" class="form-inputs" required>
+                    <label for="lname">LAST NAME</label>
+                    <input type="text" name="lastname" id="text" placeholder="LAST NAME" class="form-inputs" >
+                    <label for="email">EMAIL ADDRESS</label><br>
+                    <input type="email" name="email" id="email" placeholder="EMAIL" class="form-inputs" required>
+                    <label for="password">PASSWORD</label>
+                    <input type="password" name="password" id="password" placeholder="PASSWORD" class="form-inputs" required>
+                    <input type="submit" value="REGISTER" class="submit-btn form-inputs">
+                </form>
+            </section>
+            <section class="log-in">
+                <form action="" method="get">
+                    <label for="email">EMAIL</label>
+                    <input type="email" name="email" id="email" placeholder="EMAIL" class="form-inputs" required>
+                    <label for="password">PASSWORD</label>
+                    <input type="password" name="password" id="password" placeholder="PASSWORD" class="form-inputs" required>
+                    <input type="submit" value="LOG IN" class="submit-btn form-inputs">
+                </form>
+            </section>
+     </section>
+     <!-- 
+           End of sign-up form
+      -->
+      <section class="navigation-tablets-mobile">
+        <div class="nav-container">
+            <div class="search-container">
+                <div class="search">
+                    <img src = "{% static 'assets/reshot-icon-search-A9YDCG5E73.svg' %}"  alt="search bar" width="22" height="22">      
+                    <input type="text" class="main-search search-tablets" placeholder="SEARCH"></input>
+                </div>
+                <hr class="line" size="1">
+            </div>
+        <nav class="nav-tablets nav">
+            <a href="shop.html">SHOP</a>
+            <a href="About.html">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </div>
+    </section>
+    <!-- 
+          End of navigation page for tablets and mobiles.
+     -->
+    <section class="products">
+        <li class="items">
+            <a href=""><h3>Shirts</h3></a>
+            <figure>
+                <a href="">
+                    <img src = "{% static 'assets/home_shirts.webp' %}"  alt="shirt" >
+                </a>
+                <figcaption>
+                    <a href="">
+                        <b>
+                            <span class="title">THE CRATOR SHIRT</span>
+                            <span class="subtitle">in Evergreen check</span>
+                            <span class="sale-price">$120</span>
+                        </b>
+                    </a>
+                </figcaption>
+                <p class="shop-link underline-affect">SHOP NOW</p>
+            </figure>
+        </li>
+        <li class="items">
+            <a href=""><h3>Bottoms</h3></a>
+            <figure>
+                <a href="">
+                    <img src = "{% static 'assets/home_bottoms.jpg' %}"  alt="shirt" >
+                </a>
+                <figcaption>
+                    <a href="">
+                        <b>
+                            <span class="title">THE WEEKEND PANT</span>
+                            <span class="subtitle">in coal double knit</span>
+                            <span class="sale-price">$134</span>
+                        </b>
+                    </a>
+                </figcaption>
+                <p class="shop-link underline-affect">SHOP NOW</p>
+            </figure>
+        </li>
+        <li class="items">
+            <a href=""><h3>Outwear</h3></a>
+            <figure>
+                <a href="">
+                    <img src = "{% static 'assets/home_outwear.jpg' %}"  alt="shirt" >
+                </a>
+                <figcaption>
+                    <a href="">
+                        <b>
+                            <span class="title">THE BOMBER JACKET</span>
+                            <span class="subtitle">in Espresso Marl Wool</span>
+                            <span class="sale-price">$230</span>
+                        </b>
+                    </a>
+                </figcaption>
+                <p class="shop-link underline-affect">SHOP NOW</p>
+            </figure>
+        </li>
+        <li class="items">
+            <a href=""><h3>Knits</h3></a>
+            <figure>
+                <a href="">
+                    <img src = "{% static 'assets/home_knits.webp' %}"  alt="shirt" >
+                </a>
+                <figcaption>
+                    <a href="">
+                        <b>
+                            <span class="title">THE FILLMORE CREWNECK</span>
+                            <span class="subtitle">in Cypress Terry</span>
+                            <span class="sale-price">$94.50</span>
+                        </b>
+                    </a>
+                </figcaption>
+                <p class="shop-link underline-affect">SHOP NOW</p>
+            </figure>
+        </li>
+        <li class="items">
+            <a href=""><h3>Accessories</h3></a>
+            <figure>
+                <a href="">
+                    <img src = "{% static 'assets/home_accessories.jpg' %}"  alt="shirt" >
+                </a>
+                <figcaption>
+                    <a href="">
+                        <b>
+                            <span class="title">THE UTILITY BAG</span>
+                            <span class="subtitle">in navy</span>
+                            <span class="sale-price">$300</span>
+                        </b>
+                    </a>
+                </figcaption>
+                <p class="shop-link underline-affect">SHOP NOW</p>
+            </figure>
+        </li>
+        <li class="items">
+            <a href=""><h3>Footwear</h3></a>
+            <figure>
+                <a href="">
+                    <img src = "{% static 'assets/home_footwear.webp' %}"  alt="shirt" >
+                </a>
+                <figcaption>
+                    <a href="">
+                        <b>
+                            <span class="title">THE FRENCH BOOT</span>
+                            <span class="subtitle">in Golden Brown Waxed Suede</span>
+                            <span class="sale-price">$350</span>
+                        </b>
+                    </a>
+                </figcaption>
+            <p class="shop-link underline-affect">SHOP NOW</p>
+            </figure>
+        </li>
+    </section>
+    
+    <!-- 
+        End of product section
+      -->
+    <section class="featured-prod">
+        <div class="featured-container">
+            <figure class="textured-tops">
+                <div class="feat-content">
+                    <a href=""><h1>Textured Tops</h1></a>
+                     <p class="para" id="para-1">Legendary flannels and classical shirts - 
+                        built from responsibe materials, designed to take on fall,
+                        winter and whatever else you throw at them
+                     </p>
+                     <button type="submit" class="shop-btn" onclick="changeContent()">
+                        <h3>SHOP SHIRTS</h3>
+                    </button>
+                </div>
+            </figure>
+            <figure class="solicit">
+                <div class="feat-content">
+                    <a href=""><h1>Solstice Staples</h1></a>
+                     <p class="para">Legendary flannels and classical shirts - 
+                        built from responsibe materials, designed to take on fall,
+                        winter and whatever else you throw at them
+                     </p>
+                     <button type="submit" class="shop-btn">
+                        <h3>SHOP OUR PICKS</h3>
+                    </button>
+                </div>
+            </figure>
+        </div>
+    </section>
+    <hr color="white" style="margin: 0;">
+    <!-- 
+        footer starts here 
+     -->
+    <footer>
+        <section class="company">
+            <h4>BLACK MARKET</h4>
+            <p>Comfortable & Funclothing
+                for people who value our
+                natural resources
+            </p>
+            <p>copyright &copy; Black Market</p>
+        </section>
+        <section class="about">
+            <h5>ABOUT</h5>
+            <a>shop</a>
+            <a>about</a>
+            <a>contact us</a>
+        </section>
+        <section class="Socials">
+            <h5>SOCIALS</h5>
+            <a href=""><img src = "{% static 'assets/free_icon_1 (4).svg' %}"  alt="instagram" width="clamp(15,30,40)" height="30"></a>
+            <a href=""><img src = "{% static 'assets/free_icon_1 (3).svg' %}"  alt="pinterest" width="30" height="30"></a>
+            <a href=""><img src = "{% static 'assets/free_icon_1 (2).svg' %}"  alt="twitter" width="30" height="30"></a>
+            <a href=""><img src = "{% static 'assets/free_icon_1 (1).svg' %}"  alt="facebook" width="30" height="30"></a>
+        </section>
+        <section class="subscribe">
+            <h5>HEY!</h5>
+            <p>Enter your email to stay in the loop on new collections, pop-up shows and more.</p>
+            <input type="email" name="email" id="email" placeholder="Enter your Email Address" class="footer-email"><br>
+            <button>SUBSCRIBE</button>
+        </section>
+    </footer>
+    <!-- 
+        end of footer 
+     -->
+</body>
+
+</html>
