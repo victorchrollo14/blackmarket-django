@@ -66,7 +66,8 @@
             <h4 id="sign-up" onclick="func2()">REGISTER</h4>
         </div> 
             <section class="signup">
-                <form action="" method="get">
+                <form action="register" method="POST">
+                    {% csrf_token %}
                     <label for="fname">FIRST NAME</label><br>
                     <input type="text" name="firstname" id="text-input" placeholder="FIRST NAME" class="form-inputs" required>
                     <label for="lname">LAST NAME</label>
@@ -76,10 +77,13 @@
                     <label for="password">PASSWORD</label>
                     <input type="password" name="password" id="password" placeholder="PASSWORD" class="form-inputs" required>
                     <input type="submit" value="REGISTER" class="submit-btn form-inputs">
+                    {% for message in messages%}
+                    <h5 style="color: red;">{{ message }}</h5>
+                    {% endfor %}
                 </form>
             </section>
             <section class="log-in">
-                <form action="" method="get">
+                <form action="login" method="get">
                     <label for="email">EMAIL</label>
                     <input type="email" name="email" id="email" placeholder="EMAIL" class="form-inputs" required>
                     <label for="password">PASSWORD</label>
