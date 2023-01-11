@@ -60,26 +60,41 @@
             <span id="cross-mark" onclick="loginClose()">&#9587;</span>
             <h1>Your Account</h1>
             <span></span>
-        </div>   
+        </div>  
+        {% if user.is_authenticated %}
+        <div class="account_on_login">
+            welcome, {{ user.first_name}} {{ user.last_name }}
+            <button type="submit" class="logout">
+                <a href="signout">
+                    <h3>logout</h3>
+                </a>
+            </button>
+        </div> 
+        {% else %}
         <div class="signup-options">
             <h4 id="log-in" onclick="func1()">LOG IN</h4>
             <h4 id="sign-up" onclick="func2()">REGISTER</h4>
         </div> 
             <section class="signup">
-                <form action="" method="get">
+                <form action="register" method="POST">
+                    {% csrf_token %}
                     <label for="fname">FIRST NAME</label><br>
-                    <input type="text" name="firstname" id="text-input" placeholder="FIRST NAME" class="form-inputs" required>
+                    <input type="text" name="first_name" id="text-input" placeholder="FIRST NAME" class="form-inputs" required>
                     <label for="lname">LAST NAME</label>
-                    <input type="text" name="lastname" id="text" placeholder="LAST NAME" class="form-inputs" >
+                    <input type="text" name="last_name" id="text" placeholder="LAST NAME" class="form-inputs" >
                     <label for="email">EMAIL ADDRESS</label><br>
                     <input type="email" name="email" id="email" placeholder="EMAIL" class="form-inputs" required>
                     <label for="password">PASSWORD</label>
                     <input type="password" name="password" id="password" placeholder="PASSWORD" class="form-inputs" required>
                     <input type="submit" value="REGISTER" class="submit-btn form-inputs">
+                    {% for message in messages%}
+                    <h5 style="color: red;">{{ message }}</h5>
+                    {% endfor %}
                 </form>
             </section>
             <section class="log-in">
-                <form action="" method="get">
+                <form action="login" method="POST">
+                    {% csrf_token %}
                     <label for="email">EMAIL</label>
                     <input type="email" name="email" id="email" placeholder="EMAIL" class="form-inputs" required>
                     <label for="password">PASSWORD</label>
@@ -87,6 +102,7 @@
                     <input type="submit" value="LOG IN" class="submit-btn form-inputs">
                 </form>
             </section>
+            {% endif %}
      </section>
      <!-- 
            End of sign-up form

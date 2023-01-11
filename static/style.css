@@ -392,7 +392,12 @@ label{
     font-size:large;
     font-weight: light;
     border:0;
-}       
+}   
+
+.logout h3{
+    color:black;
+
+}
 
 /* 
           NAVIGATION FOR TABLETS AND MOBILES.
